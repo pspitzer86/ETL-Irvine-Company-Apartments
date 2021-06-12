@@ -1,0 +1,14 @@
+DEMOGRAPHICS
+------------
+
+
+WHILE cities to scrape
+	IF city_name exists in cities table
+	THEN
+		UPDATE population, median_income, median_age
+			WHERE cities.city_name = city_name
+	ELSE /* city_name does not exist in DB
+		INSERT into cities
+			city_name, population, median_income, median_age
+	ENDIF
+ENDWHILE

@@ -1,0 +1,39 @@
+RENTALS
+------------
+
+
+WHILE complexes to scrape
+DO
+	IF complex DOES NOT EXIST in complex table
+	THEN
+		IF city_name DOES NOT EXIST in cities table
+		THEN
+			INSERT city_name into cities
+		ELSE
+		ENDIF
+			INSERT INTO complex table
+				complex_name, complex_address, complex_url, city_id
+	ELSE
+	ENDIF
+
+	WHILE available apartments to scrape
+	DO
+		IF available_date > curr_date
+		THEN
+			set vacant = N
+		ELSE
+			set vacant = Y
+		ENDIF
+
+		IF complex_id, unit_id DOES NOT EXIST in apartments table
+		THEN
+			INSERT INTO apartments table
+				complex_id, unit_id, plan_name, apt_type, sq_ft, start_price, vacant, curr_price, list_start_date, available_date, curr_date
+		ELSE
+			UPDATE apartments table
+				SET curr_price, curr_date
+				WHERE apartments.complex_id == complex_id and
+						  apartments.unit_id == unit_id
+		ENDIF
+	ENDWHILE
+ENDWHILE

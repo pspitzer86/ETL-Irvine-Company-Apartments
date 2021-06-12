@@ -1,1 +1,2 @@
-# etl_project
+# ETL-IrvineCompanyApts
+UCSD DS&amp;V Bootcamp ETL Project

@@ -1,0 +1,17 @@
+COST OF LIVING
+--------------
+
+
+WHILE cities to scrape
+	IF state == CA
+	THEN
+		IF city_name exists in cities table
+		THEN
+			UPDATE cost_of_living
+				WHERE cities.city_name = city_name
+		ELSE /* city_name does not exist in DB
+			INSERT into cities
+				city_name, cost_of_living
+		ENDIF
+	ENDIF
+ENDWHILE

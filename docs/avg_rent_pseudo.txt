@@ -1,0 +1,23 @@
+AVERAGE RENT
+------------
+
+
+WHILE cities in CSV
+	IF state == CA
+	THEN
+		IF city_name exists in cities table
+		THEN
+			IF city_id and apt_type exists in avg_rent table
+			THEN
+				UPDATE avg_rent
+					WHERE avg_rent.city_id = city_id and avg_rent.apt_type = apt_type
+			ELSE
+				INSERT into avg_rent
+					city_id, apt_type, avg_rent
+			ENDIF
+		ELSE /* city_name does not exist in DB
+			INSERT into cities
+				city_name
+		ENDIF
+	ENDIF
+ENDWHILE
